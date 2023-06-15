@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block; 
+    }
+    nav ul li a {
+  color: black; 
+  transition: color 0.3s; 
+}
+
+nav ul li a:hover {
+  color: gray; 
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ICIA</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">LOGIN</a></li>
+      <li><a href="#">JOIN</a></li>
+      <li><a href="#">FIND</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <button class="arrow-button"></button>
+    <div>
+      <img id="slider"width="500px">
+      <button onclick="prev();">&lt;&lt;&lt;</button>
+      <button onclick="next();">&gt;&gt;&gt;</button>
+    </div>
+    <div>
+      <script>
+        
+        index=0;
+       
+        const image=document.querySelector('#slider');
+        const images=['보더콜리1.jpg','보더콜리2.jpg','보더콜리3.jpg','보더콜리4.jpg']
+       
+        function prev(){
+          index--;
+          if(index<0){
+            index=3;
+          }
+          image.setAttribute('src',images[index]);
+          
+        }
+        function next(){
+          index++;
+          if(index>3){
+            index=0;
+          }
+          image.setAttribute('src',images[index]);
+          
+        }
+       
+      </script>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2023 icia
+  </footer>
+</body>
+</html>

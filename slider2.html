@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img id="slider"width="500px">
+    <button onclick="prev();">&lt;&lt;&lt;</button>
+    <button onclick="next();">&gt;&gt;&gt;</button>
+  </div>
+  <script>
+    //JavaScript의 표준은 ES(이에스 스크립트)
+    index=0;
+   
+    const image=document.querySelector('#slider');
+    const images=['보더콜리1.jpg','보더콜리2.jpg','보더콜리3.jpg','보더콜리4.jpg']
+    //사진에 images[0]를 src로 지정
+   
+    function prev(){
+      index--;
+      if(index<0){
+        index=3;
+      }
+      image.setAttribute('src',images[index]);
+      
+    }
+    function next(){
+      index++;
+      if(index>3){
+        index=0;
+      }
+      image.setAttribute('src',images[index]);
+      
+    }
+  </script>
+  
+</body>
+</html>
